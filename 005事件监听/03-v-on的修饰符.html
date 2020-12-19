@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="demo" @clic.stop="btnClick">
+        <button @click="btn01Click">按钮一</button>
+    </div> -->
+    <div id="demo">
+        <!-- .stop修饰符的使用 -->
+        <button @click="btn01Click">按钮一</button>
+        <!-- .prevent修饰符的使用 -->
+        <form action="百度">
+            <input type="submit" value="提交" @click.prevent="submitClick">
+        </form>
+        <!-- .once修饰符的使用 -->
+        <button @click.once="btn03Click">按钮三</button>
+        <!-- 监听某个键盘键帽的点击 -->
+        <input type="text" @keydown.shift="Keydown">
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#demo',
+            data: {
+                message: 'lisa'
+            },
+            methods: {
+                btn01Click() {
+                    console.log("btn01Click");
+                },
+                btnClick() {
+                    console.log("btnClick");
+                },
+                submitClick() {
+                    console.log("submitClick");
+                },
+                btn03Click() {
+                    console.log("btn03Click");
+                },
+                Keydown() {
+                    console.log("keydown");
+                }
+            }
+        })
+    </script>
+</body>
+</html>

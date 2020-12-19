@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        <div>
+            <span v-if="isShow">
+                <label for="username">用户信息</label>
+                <input type="text" id="username" placeholder="用户信息">
+            </span>
+            <span v-else>
+                <label for="email">用户邮箱</label>
+                <input type="text" id="email" placeholder="用户邮箱">
+            </span>
+            <button @click="btnClick">切换</button>
+        </div>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#demo',
+            data: {
+                message: 'lisa',
+                isShow: true
+            },
+            methods: {
+                btnClick() {
+                    this.isShow = !this.isShow
+                }
+            }
+        })
+    </script>
+</body>
+</html>

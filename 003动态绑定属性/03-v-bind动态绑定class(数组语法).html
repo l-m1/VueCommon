@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        <!-- <h2 class="['字符串1','字符串2']"></h2> -->
+        <!-- <h2 class="[变量1,变量2]"></h2> -->
+        <h2 class="title" v-bind:class="[username,number]">{{message}}</h2>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#demo',
+            data: {
+                message: 'hello',
+                username: '你好',
+                number: '233'
+            }
+        })
+    </script>
+</body>
+</html>

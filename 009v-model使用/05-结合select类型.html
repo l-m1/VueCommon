@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        <!-- 选择一个 对应字符串 -->
+        <!-- <select name="水果" v-model="fruit">
+            <option value="苹果">苹果</option>
+            <option value="香蕉">香蕉</option>
+            <option value="橙子">橙子</option>
+            <option value="橘子">橘子</option>
+            <option value="榴莲">榴莲</option>
+        </select> 
+        <h2>您喜欢的水果是: {{fruit}}</h2>-->
+        <!-- 多选 -->
+        <select name="水果" v-model="fruits" multiple>
+            <option value="苹果">苹果</option>
+            <option value="香蕉">香蕉</option>
+            <option value="橙子">橙子</option>
+            <option value="橘子">橘子</option>
+            <option value="榴莲">榴莲</option>
+        </select>
+        <h2>您喜欢的水果是: {{fruits}}</h2>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#demo',
+            data: {
+                message: 'lisa',
+                fruit: '榴莲',
+                fruits: []
+
+            }
+        })
+    </script>
+</body>
+</html>

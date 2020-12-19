@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 将两个字符串拼接到一起 -->
+    <div id="demo">
+        <h2>{{firstname}} {{lastname}}</h2>
+        <h2>{{firstname+" "+lastname}}</h2>
+        <h2>{{getFullname()}}</h2>
+        <h2>{{fullname}}</h2>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#demo',
+            data: {
+                firstname: 'Hello',
+                lastname: 'Kitty'
+            },
+            methods: {
+                getFullname: function(){
+                    return this.firstname +" "+ this.lastname
+                }
+            },
+            computed: {
+                fullname: function(){
+                    return this.firstname +" "+ this.lastname
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

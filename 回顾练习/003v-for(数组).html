@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        <ul>
+            <li v-for="(item,index) in movies">{{index+1}}--{{item}}</li>
+        </ul>
+    </div>
+    <script src="../js/vue.js">
+    </script>
+    <script>
+        const app = new Vue({
+            el: '#demo',
+            data: {
+                message: 'lisa',
+                movies: ['战狼','姜子牙','雷神','我是特种兵']
+            }
+        })
+    </script>
+</body>
+</html>

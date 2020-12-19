@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        <cpn @increment="changeTotal" @decrement="changeTotal"></cpn>
+        <p>当前数字: {{total}}</p>
+    </div>
+    <template id="cpn1">
+        <div>
+            <button @click="increment">+</button>
+            <button @click="decrement">-</button>
+            
+        </div>
+    </template>
+    <script src="../js/vue.js"></script>
+    <script>
+        const cpn = ('cpn',{
+            template: '#cpn1',
+            data() {
+                return {
+                    counter: 0
+                }
+            },
+            methods: {
+                increment() {
+                    this.counter++
+                    this.$emit('increment',this.counter)
+                },
+                decrement() {
+                    this.counter--
+                    this.$emit('decrement',this.counter)
+                }
+            }
+        })
+        const app = new Vue({
+            el: '#demo',
+            data:{
+                total: 0
+            },
+            components: {
+                cpn
+            },
+            methods: {
+                changeTotal(counter) {
+                    this.total = counter
+                }
+            }
+        })
+    </script>
+</body>
+</html>

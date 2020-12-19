@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        <cpn></cpn>
+        <cpn>
+            <!-- 通过template模板拿到slot中定义的data -->
+            <template slot-scope="slot">
+                <span v-for="item in slot.data">{{item}} --- </span>
+               <!-- 去除最后的连接符使用join -->
+               <!-- <span>{{slot.data.join('  *  ')}}</span> -->  
+            </template>
+        </cpn>
+    </div>
+    
+    <script src="../js/vue.js"></script>
+    <template id="cpn1">
+        <div>
+            <slot :data="movies">
+            <ul>
+                <li v-for="item in movies">{{item}}</li>
+            </ul>
+            </slot>
+        </div>
+    </template>
+
+    <script>
+        const app = new Vue({
+            el: '#demo',
+            data: {},
+            components: {
+                cpn: {
+                    template: '#cpn1',
+                    data() {
+                        return{
+                            movies:['战狼','姜子牙','雷神','我是特种兵']
+                        }
+                    },
+                    created() {
+                        this.movies.join('*')
+                    }
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>

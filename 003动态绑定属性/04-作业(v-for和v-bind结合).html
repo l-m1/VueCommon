@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 点击列表哪一项，那么该项的文字变成红色 -->
+    <div id="demo">
+        <ul>
+            <li v-for="(m,index) in movies" 
+                :class="{active: count===index}"
+                @click="change(index)">
+            {{index}}--{{m}}
+        </li>
+        </ul>
+    </div>
+    <script src="../js/vue.js"></script> 
+    <script>
+        const app = new Vue({
+            el: '#demo',
+            data: {
+                movies: ['冰雪奇缘','地下王国','斗罗大陆','姜子牙','战神'],
+                count: 0
+            },
+            methods: {
+                change(index) {
+                    this.count = index
+                }
+            }
+        })
+    </script>
+</body>
+</html>

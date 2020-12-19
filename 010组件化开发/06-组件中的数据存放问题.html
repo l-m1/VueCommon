@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        <cpn></cpn>
+    </div>
+    <script src="../js/vue.js"></script>
+    <template id="cpn">
+        <div>
+            <h2>{{title}}</h2>
+            <p>{{info}}</p>
+            <p>我是内容，哈哈哈哈哈</p>
+        </div>
+    </template>
+    
+    <script>
+        Vue.component('cpn',{
+        template: '#cpn',
+        data() {
+            return{
+                info: [{
+                    name: 'lm',
+                    age: 18,
+                    height: 1.75
+                }],
+                title: 'hello'
+            }
+        }
+    })
+        const app = new Vue({
+            el: '#demo',
+            data: {
+                message: 'lisa',
+                title: 'Hello'
+            }
+        })
+    </script>
+</body>
+</html>

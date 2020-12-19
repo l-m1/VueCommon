@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <di id="demo">
+        <!-- <h2 :style="{'key:value'}">{{hello}}</h2> -->
+        <h2 :style="getStyles()">{{message}}</h2>
+    </di>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#demo',
+            data: {
+                message: 'hello'
+            },
+            methods: {
+                getStyles: function(){
+                    return {color:'red',fontSize:'50px'}
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        <button @click="btn01Click">按钮一</button> 
+        <!-- 后面调用不带（）返回event事件
+        <button @click="btn02Click">按钮二</button> -->
+
+        <!-- 后面调用带()，返回undefined 
+        <button @click="btn02Click(abc)">按钮二</button>-->
+
+        <!-- 带参数返回hello 
+        <button @click="btn02Click('hello')">按钮二</button>-->
+
+        <button @click="btn03Click(abc,$event)">按钮三</button>
+        <!-- <button @click="btn04Click">按钮四</button> -->
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#demo',
+            data: {
+                message: 'lisa',
+                abc: '23'
+            },
+            methods: {
+                btn01Click() {
+                    console.log("btn01Click");
+                },
+                btn02Click(event) {
+                    console.log("btn02Click",event);
+                },
+                btn03Click(abc,event) {
+                    console.log("btn03Click",abc);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
